@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD编辑器工具集</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <nav class="sidebar">
+            <div class="tab-item active" data-tab="md-editor">
+                <div>MD</div>
+                <div>编辑器</div>
+            </div>
+            <!-- 预留其他tab位置 -->
+        </nav>
+        
+        <!-- 主内容区域 -->
+        <main class="main-content">
+            <div id="md-editor" class="tab-content active">
+                <div class="editor-container">
+                    <!-- 左侧历史记录 -->
+                    <div class="history-panel">
+                        <button id="openFileBtn" class="btn-primary">打开文件</button>
+                        <div id="historyList" class="history-list">
+                            <!-- 历史记录将通过JS动态添加 -->
+                        </div>
+                    </div>
+                    
+                    <!-- 右侧编辑器 -->
+                    <div class="editor-panel">
+                        <div class="editor-wrapper">
+                            <textarea id="editor"></textarea>
+                            <div class="floating-buttons">
+                                <button id="saveBtn" class="btn-primary">保存</button>
+                                <button id="saveAsBtn" class="btn-primary">另存为</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Toast提示 -->
+    <div id="toast" class="toast"></div>
+
+    <!-- 引入外部库 -->
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    
+    <!-- 自定义脚本 -->
+    <script src="main.js"></script>
+    <script src="md-editor/editor.js"></script>
+</body>
+</html> 
